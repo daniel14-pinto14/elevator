@@ -1,15 +1,6 @@
 #Elevator Simulator
 
 The maven project is a Spring MVC and REST application with Angular.js as the front-end engine.
-To simulate the elevators I have used publisher-subscriber pattern.
-
-You can find ``ElevatorPub`` as the publisher of the floor calls and ``ElevatorSub`` to be the subscribe associated with each elevator. In our case we have two elevators. When the web application starts we initialise and start the elevator thread as a singleton from ``ElevatorPubSingleton``.
-
-The web application would be hosted on integrated jetty server. The entire application can be started using the following command
-
-``
-	mvn clean jetty:run
-``
 
 ##REST API
 
