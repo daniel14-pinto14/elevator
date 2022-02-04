@@ -1,8 +1,6 @@
 package org.elevator.business;
 
-/**
- * Created by Dheeraj Agrawal on 26/04/15.
- */
+
 public class SimulatorTest {
     public static void main(String[] args) throws InterruptedException {
         ElevatorPub elevatorPub = new ElevatorPub();

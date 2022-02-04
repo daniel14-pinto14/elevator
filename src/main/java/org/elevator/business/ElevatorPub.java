@@ -70,23 +70,9 @@ public class ElevatorPub {
 
 
     public void gotoInsideFloor(int floorNo, int elevatorId) {
-        for (ElevatorSub elevatorSub : elevatorSubs) {
-            if (elevatorId == elevatorSub.getElevatorId()) {
-                if (elevatorSub.isUp() && elevatorSub.getCurrentFloor().getFloorNo() < floorNo) {
-                    FloorCall floorCall = new FloorCall(floorNo, true);
-                    synchronized (MUTEX) {
-                        if (!pendingFloorCalls.contains(floorCall)) pendingFloorCalls.add(floorCall);
-                    }
-                } else if (!elevatorSub.isUp() && elevatorSub.getCurrentFloor().getFloorNo() > floorNo) {
-                    FloorCall floorCall = new FloorCall(floorNo, false);
-                    synchronized (MUTEX) {
-                        if (!pendingFloorCalls.contains(floorCall)) pendingFloorCalls.add(floorCall);
-                    }
-                } else throw new InvalidParameterException("Floor cannot be selected: " + floorNo);
-                break;
-            }
-        }
-    }
+         gotoFloor( floorNo,  elevatorId);
+     }
+
 
     public synchronized FloorCall getUpdate() {
         synchronized (MUTEX) {
