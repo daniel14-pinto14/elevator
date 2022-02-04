@@ -27,7 +27,7 @@ public class ElevatorController {
     }
 
 
-    @RequestMapping(value = "/requestInsideElevator/{elevatorId}/{floor}", method = RequestMethod.GET)
+    @RequestMapping(value = "/requestInsideElevator/{elevatorId}/goto/{floor}", method = RequestMethod.GET)
     public void requestInsideElevator(@NotNull @PathVariable Integer elevatorId,@NotNull @PathVariable Integer floor) {
         log.info("Elevator Event " + "Inside Elevator "+elevatorId+ " to floor "+ floor);
         elevatorSvc.gotoInsideFloor(floorNo, elevatorId);
