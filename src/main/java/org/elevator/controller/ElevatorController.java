@@ -2,6 +2,7 @@ package org.elevator.controller;
 
 import org.elevator.common.FloorCall;
 import org.elevator.service.ElevatorSvc;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,9 +29,9 @@ public class ElevatorController {
 
 
     @RequestMapping(value = "/requestInsideElevator/{elevatorId}/goto/{floor}", method = RequestMethod.GET)
-    public void requestInsideElevator(@NotNull @PathVariable Integer elevatorId,@NotNull @PathVariable Integer floor) {
+    public void requestInsideElevator(@NotNull @PathVariable Integer elevatorId, @NotNull @PathVariable Integer floor) {
         log.info("Elevator Event " + "Inside Elevator "+elevatorId+ " to floor "+ floor);
-        elevatorSvc.gotoInsideFloor(floorNo, elevatorId);
+        elevatorSvc.gotoInsideFloor(floor, elevatorId);
     }
 
 
