@@ -21,7 +21,7 @@ public class ElevatorController {
     @Autowired
     private ElevatorSvc elevatorSvc;
 
-    @RequestMapping(value = "/requestoutsideElevator/{elevatorId}/goto/{floorNo}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/elevator/{elevatorId}/goto/{floorNo}", method = RequestMethod.PUT)
     public void gotoFloor(@PathVariable int elevatorId, @PathVariable int floorNo) {
         log.info("FloorNo:" + floorNo + " ElevatorId " + elevatorId);
         elevatorSvc.gotoFloor(floorNo, elevatorId);
